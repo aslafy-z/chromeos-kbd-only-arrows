@@ -1,0 +1,24 @@
+{
+  "name": "IME: Only arrow keys",
+  "author": "Zadkiel",
+  "homepage_url": "https://github.com/aslafy-z/chromeos-only-arrows",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "Disable all keys but arrow ones (Left, Right, Up, Down)",
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "permissions": [
+    "input"
+  ],
+  "input_components": [
+    {
+      "name": "Only arrow keys",
+      "type": "ime",
+      "id": "only_directionnal_keys",
+      "description": "Disable all keys but arrow ones (Left, Right, Up, Down)",
+      "language": "en",
+      "layouts": ["en(only-arrow-keys)"]
+    }
+  ]
+}
