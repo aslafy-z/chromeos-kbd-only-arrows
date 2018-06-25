@@ -5,6 +5,7 @@
   "version": "1.0",
   "manifest_version": 2,
   "description": "Disable all keys but arrow ones (Left, Right, Up, Down)",
+  "icons": { "128": "icon128.png" },
   "background": {
     "scripts": ["background.js"]
   },
