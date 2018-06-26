@@ -1,19 +1,30 @@
-var contextId = -1;
+var allowedKeys = ['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'];
+
+var contextID = -1;
 chrome.input.ime.onFocus.addListener(function(context) {
-  contextId = context.contextID;
+  contextID = context.contextID;
+});
+chrome.input.ime.onBlur.addListener(function(context) {
+  contextID = -1;
 });
 
-var allowedKeys = [
-  'ArrowLeft',
-  'ArrowRight',
-  'ArrowUp',
-  'ArrowDown',
-];
+function isModdedEvent(keyData) {
+  return (
+    keyData.ctrlKey || keyData.shiftKey || keyData.altKey || keyData.metaKey
+  );
+}
 
 chrome.input.ime.onKeyEvent.addListener(function(engineID, keyData) {
-  if (keyData.type == 'keydown' && allowedKeys.includes(keyData.code)) {
-    chrome.input.ime.sendKeyEvents({'contextID': contextId, 'keyData': [keyData]});
+  if (
+    // If event has modifier key
+    isModdedEvent(keyData) ||
+    // Or it's not an allowed key
+    !allowedKeys.includes(keyData.code)
+  ) {
+    // Skip it
+    return true;
   }
 
-  return true;
+  // Else, let IME do it's work
+  return false;
 });

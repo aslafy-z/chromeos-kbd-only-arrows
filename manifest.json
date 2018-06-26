@@ -17,7 +17,7 @@
       "id": "only_arrows",
       "description": "Disable all keys but arrows (Left, Right, Up, Down)",
       "language": "en",
-      "layouts": ["en(only-arrows)"]
+      "layouts": ["en:only-arrows:eng"]
     }
   ]
 }
