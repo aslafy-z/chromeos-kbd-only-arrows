@@ -16,8 +16,8 @@
       "type": "ime",
       "id": "only_arrows",
       "description": "Disable all keys but arrows (Left, Right, Up, Down)",
-      "language": "en",
-      "layouts": ["en:only-arrows:eng"]
+      "language": "fr",
+      "layouts": ["fr:only-arrows:fr"]
     }
   ]
 }

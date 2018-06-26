@@ -7,4 +7,4 @@ Install instructions can be found here: https://github.com/google/extra-keyboard
 
 ## Todo
 
-[ ] Find a way to enable for all languages (currently only English)
+[ ] Find a way to enable for all languages (currently only French)
